@@ -1,0 +1,86 @@
+#include<iostream>
+using namespace std;
+
+class BOOK
+{
+	public:
+	int n,price[500],stock[100],ck,tt;
+	string name[100],auth[50],publ[90],na,a;
+	
+	
+	 int data()
+	 {
+	 	cout<<"Enter the how many books data you want to save : ";
+	 	cin>>n;
+	    for(int i=1;i<=n;i++)
+	    {
+	    	cout<<"Enter the name of book : ";
+	    	cin>>name[i];
+	    	cout<<"Enter the name of author : ";
+	    	cin>>auth[i];
+	    	cout<<"Enter the price of book : ";
+	    	cin>>price[i];
+	    	cout<<"Enter the name of publication : ";
+	    	cin>>publ[i];
+	    	cout<<"Enter the  stock : ";
+	    	cin>>stock[i];
+	    	cout<<endl;
+	    	
+		}
+	 }
+	 
+	 int display()
+	 {
+	 	for(int i=1;i<=n;i++)
+	 	{
+	 		cout<<"The book name is : "<<name[i]<<endl;
+	 		cout<<"The name of author is : "<<auth[i]<<endl;
+	 		cout<<"The price of book is : "<<price[i]<<endl;
+	 		cout<<"The publication is : "<<publ[i]<<endl;
+	 		cout<<"The stock is : "<<stock[i]<<endl;
+	 		cout<<endl;
+		 }
+	 }
+	 
+	 int check()
+	 {
+	 	cout<<"Enter the book name which you want : ";
+	 	cin>>na;
+	 	cout<<"Enter the auther name of book : ";
+	 	cin>>a;
+	 	
+	 	
+	 	for(int i=1;i<=n;i++)
+	 	{
+	 		if(na==name[i]&&a==auth[i])
+	 		  {
+	 		  	cout<<"Enter how many stock you want : ";
+	 		  	cin>>ck;
+	 		  	if(ck<=stock[i])
+	 		  	
+	 		  		tt=price[i]*ck;
+	 		  		cout<<"__**__The Book is Avalible__**__"<<endl;
+	 		  		cout<<"The total price of all book is : "<<tt<<endl;
+				   
+				   	
+			     }
+				   else{
+			    	cout<<"BOOK is not available ......."<<endl;
+			}
+		
+		 }
+	 }
+	 
+	 	 
+	 
+};
+
+int main()
+{
+	BOOK a;
+	a.data();
+	a.display();
+	a.check();
+	
+return 0;	
+}
